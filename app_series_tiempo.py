@@ -31,7 +31,7 @@ def generar_datos(n_dias, amplitud_estacional, nivel_ruido, pendiente_tendencia)
     t = np.arange(n_horas)
 
     tendencia = pendiente_tendencia * t
-    estacionalidad = amplitud_estacional * np.sin(2 * np.pi * t / 24 - np.pi / 2)
+    estacionalidad = amplitud_estacional * np.sin(2 * np.pi * t / 12 - np.pi / 2)
     ruido = np.random.default_rng(42).normal(0, nivel_ruido, n_horas)
 
     temperatura = 22 + tendencia + estacionalidad + ruido
